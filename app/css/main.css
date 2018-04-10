@@ -13558,20 +13558,6 @@ http://flickity.metafizzy.co
   text-decoration: underline;
   right: 0px; }
 
-.bg-hill {
-  width: 100%;
-  position: absolute;
-  background-color: white;
-  height: 180px; }
-  .bg-hill.top {
-    top: -179px;
-    -webkit-clip-path: polygon(0 0, 110% 100%, 0 100%);
-    clip-path: polygon(0 0, 110% 100%, 0 100%); }
-  .bg-hill.down {
-    bottom: -179px;
-    -webkit-clip-path: polygon(110% 0, 0 0, 0 100%);
-    clip-path: polygon(110% 0, 0 0, 0 100%); }
-
 .tp-form-control {
   display: block;
   width: 100%;
@@ -14487,41 +14473,87 @@ a[target="_blank"] {
       margin: auto;
       padding: 0 30px; }
     .short-journal-carousel .carousel-items .img-content {
+      opacity: 0;
+      -webkit-transition: all 0.8s ease-in-out 0s;
+      -o-transition: all 0.8s ease-in-out 0s;
+      transition: all 0.8s ease-in-out 0s;
       -webkit-transform: scale(0);
       -ms-transform: scale(0);
       transform: scale(0);
-      opacity: 0;
-      -webkit-transition: all 0.8s ease-in-out 0.8s;
-      -o-transition: all 0.8s ease-in-out 0.8s;
-      transition: all 0.8s ease-in-out 0.8s; }
+      -webkit-transform-origin: 50% 50%;
+      -ms-transform-origin: 50% 50%;
+      transform-origin: 50% 50%; }
       .short-journal-carousel .carousel-items .img-content img {
         width: 100%; }
-    .short-journal-carousel .carousel-items .is-selected .img-content {
+    .short-journal-carousel .carousel-items .desc-content {
+      opacity: 0;
+      -webkit-transition: all 0.5s ease-in-out 0.5s;
+      -o-transition: all 0.5s ease-in-out 0.5s;
+      transition: all 0.5s ease-in-out 0.5s; }
+    .short-journal-carousel .carousel-items .is-selected {
       -webkit-transform: scale(1);
       -ms-transform: scale(1);
-      transform: scale(1);
-      opacity: 1; }
+      transform: scale(1); }
+      .short-journal-carousel .carousel-items .is-selected .img-content {
+        -webkit-transform: unset;
+        -ms-transform: unset;
+        transform: unset;
+        opacity: 1; }
+      .short-journal-carousel .carousel-items .is-selected .desc-content {
+        opacity: 1; }
     @media (max-width: 991px) {
       .short-journal-carousel .carousel-items figure {
         padding: 0; } }
-
-@meida ( min-width: 992px ) {
-  .short-journal-carousel .carousel-items .flickity-prev-next-button.previous {
-    left: -10px; }
-  .short-journal-carousel .carousel-items .flickity-prev-next-button.next {
-    right: -10px; } }
   .short-journal-carousel .flickity-prev-next-button {
     background-color: transparent; }
     .short-journal-carousel .flickity-prev-next-button .arrow {
       fill: #68a85e; }
+  @media (min-width: 992px) {
+    .short-journal-carousel .flickity-prev-next-button.previous {
+      left: -10px; }
+    .short-journal-carousel .flickity-prev-next-button.next {
+      right: -10px; } }
 
 .short-journal-items figure .img-content img {
   border: 10px solid white; }
 
 @media (max-width: 991px) {
   .short-journal-items .desc-content .content {
-    height: 290px;
+    height: 280px;
     overflow: auto; } }
+
+.subscribe {
+  background: url("../img/bg/subscribe.jpg") no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: right center; }
+  .subscribe h2 {
+    line-height: 100%; }
+  .subscribe .desc-content {
+    height: 180px; }
+  .subscribe .form-content input {
+    border: 0;
+    height: 60px;
+    font-size: 18px; }
+  .subscribe .form-content button {
+    -webkit-border-radius: 25px;
+    border-radius: 25px; }
+  .subscribe .tp-form-control {
+    padding: 6px 20px; }
+  .subscribe .btn-search {
+    position: absolute;
+    background-color: black;
+    color: white;
+    text-align: center;
+    height: 100%;
+    padding: 5px 20px;
+    top: 0;
+    right: 0; }
+  .subscribe .search-input {
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden; }
 
 .short-map {
   border-top: 5px solid rgba(17, 21, 16, 0.1);

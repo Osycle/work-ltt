@@ -289,23 +289,6 @@
 //--bg--
 
 
-.bg-hill{
-	width: 100%;
-	position: absolute;
-	//background-color: brown;
-	background-color: white;
-	height: 180px;
-	&.top{
-		top: -179px;
-		clip-path: polygon(0 0, 110% 100%, 0 100%);
-	}
-	&.down{
-		bottom: -179px;
-		clip-path: polygon(110% 0, 0 0, 0 100%);
-	}
-}
-
-
 
 
 
@@ -1387,16 +1370,26 @@ a[target="_blank"]{
 			padding: 0 30px;
 		}	
 		.img-content{
-			transform: scale( 0.0);
 			opacity: 0;
-			transition: all 0.8s ease-in-out 0.8s;
+			transition: all 0.8s ease-in-out 0s;
+			//transform: perspective(1920px) rotateY(100deg);
+			transform: scale(0.0);
+			transform-origin: 50% 50%;
 			img{
 				width: 100%;
 			}
 		}
+		.desc-content{
+			opacity: 0;
+			transition: all 0.5s ease-in-out 0.5s;
+		}
 		.is-selected{
+			transform: scale(1);
 			.img-content{
-				transform: scale(1);
+				transform: unset;
+				opacity: 1;
+			}
+			.desc-content{
 				opacity: 1;
 			}
 		}
@@ -1405,21 +1398,22 @@ a[target="_blank"]{
 				padding: 0;
 			}
 		}
-		@meida ( min-width: 992px ) {
-			.flickity-prev-next-button.previous{
-				left: -10px;
-			}
-			.flickity-prev-next-button.next{
-				right: -10px;
-			}
-
-		}
 	}
+
 	.flickity-prev-next-button {
 		background-color: transparent;
 		.arrow{
 			fill: $color-1;
 		}
+	}
+	@media ( min-width: 992px ) {
+		.flickity-prev-next-button.previous{
+			left: -10px;
+		}
+		.flickity-prev-next-button.next{
+			right: -10px;
+		}
+
 	}
 }
 .short-journal-items{
@@ -1433,7 +1427,7 @@ a[target="_blank"]{
 	@media ( max-width:991px ) {
 		.desc-content{
 			.content{
-				height: 290px;
+				height: 280px;
 				overflow: auto;
 			}
 			.btn-def{
@@ -1450,7 +1444,47 @@ a[target="_blank"]{
 
 
 
-
+//subscribe
+.subscribe{
+	background: url( "../img/bg/subscribe.jpg" ) no-repeat;
+	background-size: cover;
+	background-position: right center;
+	h2{
+		line-height:100%;
+	}
+	.desc-content{
+		height: 180px;
+	}
+	.form-content{
+		input{
+			border: 0;
+			height: 60px;
+			font-size: 18px;
+		}	
+		button{
+			border-radius: 25px;
+		}
+	}
+	.tp-form-control{
+		padding: 6px 20px;
+	}
+	.btn-search {
+	  position: absolute;
+	  background-color: black;
+	  color: white;
+	  text-align: center;
+	  height: 100%;
+	  //width: 60px;
+	  padding: 5px 20px;
+	  top: 0;
+	  right: 0;
+	}
+	.search-input {
+		border-radius: 25px;
+	  position: relative;
+	  overflow: hidden;
+	}
+}
 
 
 
