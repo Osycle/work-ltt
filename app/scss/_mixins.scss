@@ -23,7 +23,7 @@
 
 
 
-@mixin modal-center($width, $height) {
+@mixin modal-center($width, $height: false) {
 
 	width: $width;
 	margin-left: -+($width/2);

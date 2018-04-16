@@ -114,7 +114,7 @@ $(function(){
 		arrowShape: arrowStyle,
 		initialIndex: 1,
 		prevNextButtons: false,
-		draggable: checkSm(),
+		draggable: true,
 		wrapAround: false,	
 		pageDots: true,
 		contain: false,
@@ -193,14 +193,14 @@ $(function(){
 
 		}
 	}
-
-
+	var index = $(".rev-slider").length || null;
+	if( !index )
+		$(".header-scroll").addClass("header-pages");
 
 	//SCROLL
 	var minMenu = $(".header-scroll") || null;
 	var headerRange = false;
 	$( window ).on("scroll", function(e){
-
 		if( $(window).scrollTop() > 80 && headerRange == false ){
 			headerRange = true;
 			if ( minMenu ) minMenu.addClass("scrolled").addClass("down");
@@ -340,17 +340,17 @@ $(function(){
 
 					navigationHAlign:"center",
 					navigationVAlign:"bottom",
-					navigationHOffset: 0,
+					navigationHOffset: 17,
 					navigationVOffset: 30,
 
 					soloArrowLeftHalign:"left",
 					soloArrowLeftValign:"center",
-					soloArrowLeftHOffset:30,
+					soloArrowLeftHOffset:0,
 					soloArrowLeftVOffset:0,
 
 					soloArrowRightHalign:"right",
 					soloArrowRightValign:"center",
-					soloArrowRightHOffset:30,
+					soloArrowRightHOffset:0,
 					soloArrowRightVOffset:0,
 
 
@@ -368,7 +368,7 @@ $(function(){
 
 					fullWidth:"on",
 					fullScreen:"off",
-					fullScreenOffsetContainer: "#header",
+					//fullScreenOffsetContainer: "#header",
 
 					dottedOverlay:"none",
 					forceFullWidth:"off",

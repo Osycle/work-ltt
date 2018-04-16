@@ -207,6 +207,17 @@ html{
 			text-decoration: none;
 			color: $color-2;
 		}
+		&.reverse{
+			a{
+				color: rgba(white, 0.4);
+				&:hover{
+					color: white;
+				}
+			}
+			li:before{
+				color: rgba(white, 0.4);				
+			}
+		}
 	}
 	.active{
 		a{color: $color-1;}

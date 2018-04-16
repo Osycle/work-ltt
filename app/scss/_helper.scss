@@ -164,6 +164,7 @@ html{
 		display: inline-block;
 		display: inline-table;
 		padding-left: 15px;
+		vertical-align: top;
 		padding-right: 15px;
 		position: relative;
 	}
@@ -571,14 +572,18 @@ html{
 }
 
 
-
+[align="right"], [align="left"]{
+	&:first-child{
+		margin-top: 0;
+	}
+}
 [align="right"]{
-	margin: 15px;
-	margin-right: 0;
+	margin: 15px 0 15px 15px;
+	float: right; 
 }
 [align="left"]{
-	margin: 15px;
-	margin-left: 0;
+	margin: 15px 15px 15px 0;
+	float:left;
 }
 [underline]{
 	text-decoration: underline;
