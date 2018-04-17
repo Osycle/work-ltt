@@ -572,16 +572,16 @@ html{
 }
 
 
-[align="right"], [align="left"]{
+img[align="right"], img[align="left"], figure[align="right"], figure[align="left"]{
 	&:first-child{
 		margin-top: 0;
 	}
 }
-[align="right"]{
+img[align="right"], figure[align="right"]{
 	margin: 15px 0 15px 15px;
 	float: right; 
 }
-[align="left"]{
+img[align="left"], figure[align="left"]{
 	margin: 15px 15px 15px 0;
 	float:left;
 }

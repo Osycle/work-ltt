@@ -6,14 +6,6 @@ $(function(){
 
 
 
-	// FANCYBOX
-	if( $("[data-fancybox='gallery']").length != 0 )
-		$("[data-fancybox='gallery']").fancybox({
-			afterShow : function( instance, current ) {
-			},
-			transitionEffect: "zoom-in-out"
-		});
-
 	//WOW
 	new WOW({
 		offset: 30
@@ -103,9 +95,36 @@ $(function(){
 	  x3: 30
 	}
 
+	var jarticleCarousel = $('.jarticle-carousel .carousel-items').flickity({
+		imagesLoaded: true,
+		autoPlay: false,
+		pauseAutoPlayOnHover: true,
+		arrowShape: arrowStyle,
+		initialIndex: 1,
+		prevNextButtons: true,
+		draggable: true,
+		wrapAround: false,
+		pageDots: false,
+		contain: false,
+		percentPosition: true,
+		cellAlign: 'center'
+	});
 
+	// FANCYBOX
+	if( $("[data-fancybox='gallery']").length != 0 )
+		$("[data-fancybox='gallery']").fancybox({
+			afterShow : function( instance, current ) {},
+			transitionEffect: "zoom-in-out"
+		});
+	//if( $("[data-fancybox='journal']").length != 0 )
+		$("[data-fancybox]").fancybox({
+			afterShow : function( instance, current ) {
+				jarticleCarousel.flickity('resize');
+			}
+		});
+		
 
-
+	//$.fancybox.open('');
 	if( $(".short-advert-carousel .carousel-items figure").length > 1 )
 	var carouselAdvert = $('.short-advert-carousel .carousel-items').flickity({
 		imagesLoaded: true,
@@ -138,44 +157,46 @@ $(function(){
 	});
 	
 
+	window.carouselArticle = function(){
 
+		if( $('.carousel-article').length >= 0 ){
 
-	if( $('.carousel-article').length >= 0 ){
+			var carouselMain = 		$('.carousel-article .carousel-main'),
+					carouselNav = 		$('.carousel-article .carousel-nav');
 
-		var carouselMain = 		$('.carousel-article .carousel-main'),
-				carouselNav = 		$('.carousel-article .carousel-nav');
+			for( var i = 0 ; i < carouselMain.length ; i++ ){
 
-		for( var i = 0 ; i < carouselMain.length ; i++ ){
+				var crs = $(carouselMain).eq(i).flickity({
+					imagesLoaded: true,
+					prevNextButtons: false,
+					cellAlign: 'center',
+					bgLazyLoad: 1,
+					//friction: 1,
+					//selectedAttraction: 1,
+					initialIndex: 0,
+					draggable: true,
+					contain: true,
+					pageDots: false
+				});
+				var flkty = crs.data('flickity');
 
-			var crs = $(carouselMain).eq(i).flickity({
-				imagesLoaded: true,
-				prevNextButtons: false,
-				cellAlign: 'center',
-				bgLazyLoad: 1,
-				//friction: 1,
-				//selectedAttraction: 1,
-				initialIndex: 0,
-				draggable: checkSm(),
-				contain: true,
-				pageDots: false
-			});
-			var flkty = crs.data('flickity');
+				$(carouselNav).eq(i).flickity({
+					imagesLoaded: true,
+					initialIndex: 0,
+				  asNavFor: $(carouselMain)[i],
+				  prevNextButtons: true,
+				  draggable: true,
+				  cellAlign: 'center',
+				  adaptiveHeight: true,
+				  contain: true,
+				  pageDots: false
+				});
 
-			$(carouselNav).eq(i).flickity({
-				imagesLoaded: true,
-				initialIndex: 0,
-			  asNavFor: $(carouselMain)[i],
-			  prevNextButtons: true,
-			  draggable: true,
-			  cellAlign: 'center',
-			  adaptiveHeight: true,
-			  contain: true,
-			  pageDots: false
-			});
-
+			}
 		}
-	}
 
+	}
+	carouselArticle();
 
 
 
