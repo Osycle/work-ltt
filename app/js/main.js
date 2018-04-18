@@ -214,7 +214,7 @@ $(function(){
 
 		}
 	}
-	var index = $(".rev-slider").length || null;
+	var index = $(".rev-slider:not(.banner-slider)").length || null;
 	if( !index )
 		$(".header-scroll").addClass("header-pages");
 

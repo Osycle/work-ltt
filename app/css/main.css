@@ -5823,9 +5823,9 @@ html {
 [class*='list-style'].outside li {
   list-style-position: outside; }
 
-.list-style-1 ul:not([class]), .main-content ul:not([class]) {
+.list-style-1 ul:not([class]), .main-content .entry-content ul:not([class]) {
   position: relative; }
-  .list-style-1 ul:not([class]) li, .main-content ul:not([class]) li {
+  .list-style-1 ul:not([class]) li, .main-content .entry-content ul:not([class]) li {
     list-style: none;
     list-style-position: inside;
     list-style-image: url("../img/icons/list-icon.png");
@@ -13665,6 +13665,7 @@ http://flickity.metafizzy.co
   transition: all 0.35s ease-out; }
 
 .header-scroll .header-top-before {
+  opacity: 0.8;
   pointer-events: none !important;
   margin-left: -15px; }
   .header-scroll .header-top-before img {
@@ -13679,6 +13680,7 @@ http://flickity.metafizzy.co
   transition: background 0.35s ease-out; }
 
 .header-scroll.scrolled .header-top-before img, .header-scroll.header-pages .header-top-before img {
+  opacity: 1;
   pointer-events: auto !important;
   width: 15%; }
   .header-scroll.scrolled .header-top-before img:hover, .header-scroll.header-pages .header-top-before img:hover {

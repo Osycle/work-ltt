@@ -374,6 +374,7 @@ $header-min-menu: 100px;
 	top: $header-top-height;
 	img{
 		width: 60%;
+		
 		transform: translateY(-10px);
 		transition: all 0.3s ease;
 	}
@@ -385,6 +386,7 @@ $header-min-menu: 100px;
 		transition: all 0.35s ease-out;
 	}
 	.header-top-before{
+		opacity: 0.8;
 		pointer-events: none !important;
 		margin-left: -15px;
 		img{
@@ -400,6 +402,7 @@ $header-min-menu: 100px;
 	&.scrolled, &.header-pages{
 		.header-top-before {
 			img{
+				opacity: 1;
 				pointer-events: auto !important;
 				width: 15%;
 				&:hover{
@@ -987,7 +990,7 @@ body, #page{
 .main-content{
 	//z-index: 1;
 	position: relative;
-	@extend .list-style-1;
+	
 	@media (max-width: 991px){
 		text-align: center ;
 	}
@@ -995,6 +998,7 @@ body, #page{
 		text-align: left;
 	}
 	.entry-content{
+		@extend .list-style-1;
 		ul{
 			margin: 15px 0;
 		}
