@@ -13332,7 +13332,7 @@ http://flickity.metafizzy.co
   .boxes-1 figure {
     margin-left: 0%;
     margin-right: 0%;
-    width: 100.049%; }
+    width: 100%; }
 
 .boxes-2 {
   letter-spacing: -5px;
@@ -13343,7 +13343,7 @@ http://flickity.metafizzy.co
   .boxes-2 figure {
     margin-left: 2.5%;
     margin-right: 2.5%;
-    width: 45.049%; }
+    width: 45%; }
 
 .boxes-3 {
   letter-spacing: -5px;
@@ -13354,7 +13354,7 @@ http://flickity.metafizzy.co
   .boxes-3 figure {
     margin-left: 1.66667%;
     margin-right: 1.66667%;
-    width: 30.049%; }
+    width: 30%; }
 
 .boxes-4 {
   letter-spacing: -5px;
@@ -13365,7 +13365,7 @@ http://flickity.metafizzy.co
   .boxes-4 figure {
     margin-left: 1.25%;
     margin-right: 1.25%;
-    width: 22.549%; }
+    width: 22.5%; }
 
 .boxes-5 {
   letter-spacing: -5px;
@@ -13376,7 +13376,7 @@ http://flickity.metafizzy.co
   .boxes-5 figure {
     margin-left: 1%;
     margin-right: 1%;
-    width: 18.049%; }
+    width: 18%; }
 
 .boxes-6 {
   letter-spacing: -5px;
@@ -13387,7 +13387,7 @@ http://flickity.metafizzy.co
   .boxes-6 figure {
     margin-left: 0.83333%;
     margin-right: 0.83333%;
-    width: 15.049%; }
+    width: 15%; }
 
 @media (max-width: 991px) {
   .boxes-6, .boxes-5, .boxes-4 {
@@ -13399,7 +13399,7 @@ http://flickity.metafizzy.co
     .boxes-6 figure, .boxes-5 figure, .boxes-4 figure {
       margin-left: 1.66667%;
       margin-right: 1.66667%;
-      width: 30.049%; } }
+      width: 30%; } }
 
 @media (max-width: 991px) {
   .boxes-4 {
@@ -13411,7 +13411,7 @@ http://flickity.metafizzy.co
     .boxes-4 figure {
       margin-left: 2.5%;
       margin-right: 2.5%;
-      width: 45.049%; } }
+      width: 45%; } }
 
 @media (max-width: 767px) {
   .boxes-6, .boxes-5, .boxes-4, .boxes-3 {
@@ -13423,7 +13423,7 @@ http://flickity.metafizzy.co
     .boxes-6 figure, .boxes-5 figure, .boxes-4 figure, .boxes-3 figure {
       margin-left: 2.5%;
       margin-right: 2.5%;
-      width: 45.049%; } }
+      width: 45%; } }
 
 @media (max-width: 480px) {
   .boxes-6, .boxes-5, .boxes-4, .boxes-3, .boxes-2 {
@@ -13435,7 +13435,7 @@ http://flickity.metafizzy.co
     .boxes-6 figure, .boxes-5 figure, .boxes-4 figure, .boxes-3 figure, .boxes-2 figure {
       margin-left: 0%;
       margin-right: 0%;
-      width: 100.049%; } }
+      width: 100%; } }
 
 .cell-hover {
   opacity: 0;
@@ -14737,6 +14737,9 @@ a[target="_blank"] {
     -webkit-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
+    -webkit-transform-origin: 0 50%;
+    -ms-transform-origin: 0 50%;
+    transform-origin: 0 50%;
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1); }
@@ -14750,9 +14753,6 @@ a[target="_blank"] {
     -webkit-filter: contrast(115%);
     filter: contrast(115%); }
     .journals-items figure:hover .img-content {
-      -webkit-transform-origin: 0 50%;
-      -ms-transform-origin: 0 50%;
-      transform-origin: 0 50%;
       -webkit-transform: perspective(1000px) rotateY(15deg);
       transform: perspective(1000px) rotateY(15deg); }
     .journals-items figure:hover img {

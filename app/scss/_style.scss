@@ -40,7 +40,7 @@
 		margin-left:  ($mrow)+%;
 		margin-right:  ($mrow)+%;
 		//width: ( ($width/$item)+( $item / ( $item * 10) ) )+%;
-		width: ($width/$item + (0.049) )+%;
+		width: ($width/$item )+%;
 
 	}
 }
@@ -1746,6 +1746,7 @@ a[target="_blank"]{
 		transition: all 0.3s ease;
 		.img-content{
 			transition: all 0.3s ease;
+			transform-origin: 0 50%;
 			transform: scale(1);
 			img{
 				transition: all 0.3s ease;
@@ -1757,7 +1758,7 @@ a[target="_blank"]{
 		&:hover{
 			filter: contrast(115%);
 			.img-content{
-				transform-origin: 0 50%;
+				
   			transform: perspective(1000px) rotateY(15deg);
 			}
 			img{
